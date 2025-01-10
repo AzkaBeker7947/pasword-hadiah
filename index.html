@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <style>
+        @font-face {
+        font-family: 'susu';
+        src: url('fonts/MilkyNice.ttf');
+        }
+        
+        body {
+            font-family: susu;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Card Container */
+        .container {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fdfdfd;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #f5f5f5;
+        }
+
+        /* Input Style */
+        input {
+            font-family: susu;
+            padding: 12px;
+            font-size: 16px;
+            transform: translateX(-10px);
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Style */
+        button {
+            font-family: susu;
+            padding: 12px;
+            width: 100%;
+            background: #6e8efb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #a777e3;
+            transform: scale(1.05);
+        }
+
+        /* Output Style */
+        .output {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Checker</h1>
+        <p>Masukkan kode untuk melihat password hadiah :) (cluenya adalah nama online mu)</p>
+        <input type="text" id="inputName" placeholder="Masukkan Kode...">
+        <button onclick="showCode()">Tampilkan Kode</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function showCode() {
+            const name = document.getElementById('inputName').value.toUpperCase();
+            const output = document.getElementById('output');
+            if (name === "DAVINA") {
+                output.textContent = "Password: 1332121";
+            } else {
+                output.textContent = "salah :(";
+            }
+        }
+    </script>
+</body>
+</html>
